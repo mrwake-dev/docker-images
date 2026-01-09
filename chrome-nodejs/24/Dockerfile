@@ -1,17 +1,21 @@
 FROM        node:24-trixie-slim
 
 RUN		    apt-get update && apt-get install -y --no-install-recommends \
+            apt-utils \
 	        build-essential \
+            bash \
 	        ca-certificates \
 	        curl \
 	        dnsutils \
 	        ffmpeg \
 	        git \
+            gnupg2 \
 	        iproute2 \
 	        iputils-ping \
 	        libnss3 \
 	        libsqlite3-dev \
 	        libtool \
+            net-tools \
 	        python3 \
 	        python3-dev \
             apt-transport-https \
@@ -20,6 +24,7 @@ RUN		    apt-get update && apt-get install -y --no-install-recommends \
 	        tini \
 	        tzdata \
             wget \
+            xz-utils \
 	        zip \
             && wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
             && echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' \
