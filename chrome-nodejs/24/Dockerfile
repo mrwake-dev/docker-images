@@ -31,6 +31,9 @@ RUN		    apt-get update && apt-get install -y --no-install-recommends \
 
 RUN       	npm install --global npm@latest typescript ts-node @types/node
 
+ENV         PUPPETEER_SKIP_DOWNLOAD=true
+ENV         PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
+
 ENV         USER=container
 ENV			HOME=/home/container
 WORKDIR     /home/container
